@@ -1,0 +1,31 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import HeadingThreeWhiteCenter from "@/atoms/heading/three/white/center/index.astro"
+import Link from "@/atoms/link/index.astro"
+import ParagraphBaseLightLavenderCenter from "@/atoms/paragraph/base/light-lavender/center/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    description,
+    href,
+    source,
+    title
+
+} = Astro.props
+
+---
+<Link href={ href } aria_label={ title }>
+    <div class="flex flex-col items-center gap-4 border border-cadence_cyan rounded-2xl py-10 px-4 hover:bg-cadence_cyan/80">
+        <div class="size-14">
+            <PictureInternalContain
+                alternative_text={ title }
+                source={ source }
+            />
+        </div>
+        <HeadingThreeWhiteCenter>{ title }</HeadingThreeWhiteCenter>
+        <ParagraphBaseLightLavenderCenter>{ description }</ParagraphBaseLightLavenderCenter>
+    </div>
+</Link>

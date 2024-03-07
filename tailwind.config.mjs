@@ -48,6 +48,8 @@ module.exports = {
 			colors: {
 
 				"cadence_red": "#fc0508",
+				"cadence_light_lavender": "#D8D0E4",
+				"cadence_cyan": "#05D3CB"
 
 
 			},
