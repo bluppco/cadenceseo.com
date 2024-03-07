@@ -1,0 +1,50 @@
+---
+
+// IMPORTS ASTRO COMPONENTS
+import ServiceCard from "@/components/home/services/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
+import Container from "@/layouts/container/index.astro"
+
+const data = {
+
+    title: "SEO Agency That Does Things Different"
+
+}
+
+const services = Array(8).fill({
+
+    cover: "/delete-later/seo.webp",
+    title: "SEO",
+    description: "Get expert guidance to improve your website’s ranking and traffic",
+    link: "seo-marketing-consultant"
+
+})
+
+---
+<section class="bg-black py-16">
+    <Container>
+        <section class="space-y-10">
+            <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+            <section class="grid grid-cols-4 gap-5">
+                {
+
+                    services.map( ( value ) => {
+
+                        return(
+                            <ServiceCard
+                                description={ value.description }
+                                href={ value.link }
+                                source={ value.cover }
+                                title={ value.title }
+                            />
+                        )
+
+                    })
+
+                }
+            </section>
+        </section>
+    </Container>
+</section>

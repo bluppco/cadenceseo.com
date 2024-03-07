@@ -1,0 +1,59 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import BlogCard from "@/components/home/blogs/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoWhiteCenter from '@/atoms/heading/two/white/center/index.astro'
+
+
+const data = {
+
+    title: "Advice From Our Team"
+
+}
+
+const blogs = Array(3).fill({
+
+    title: "How to Convert Blog Traffic to Leads: 7 Essential Tips",
+    description: "Since Google’s main priority is to answer search intent with high-quality content, you can’t afford to neglect content marketing. It’s the catalyst for boosting your",
+    button_text: "Read More »",
+    link: "covert-traffic-to-leads",
+    cover: "/delete-later/blog-cover.jpg",
+    author_source: "/delete-later/author.png",
+    category: "Content Marketing"
+
+})
+
+---
+<section class="bg-black py-16">
+    <Container>
+        <section class="space-y-10">
+            <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+            <section class="grid grid-cols-3 gap-6">
+                {
+
+                    blogs.map( ( value ) => {
+
+                        return(
+                            <BlogCard
+                                author_source={ value.author_source }
+                                button_link={ value.link }
+                                button_text={ value.button_text }
+                                description={ value.description }
+                                source={ value.cover }
+                                title={ value.title }
+                                category={ value.category }
+                            />
+                        )
+
+                    })
+
+                }
+            </section>
+        </section>
+    </Container>
+</section>

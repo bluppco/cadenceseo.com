@@ -1,0 +1,80 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import FiveStars from "@/components/home/reviews/five-stars/index.astro"
+import ReviewCard from "@/components/home/reviews/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwo from "@/atoms/heading/two/black/center/uppercase/index.astro"
+import Link from "@/atoms/link/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+const data = {
+
+    title: "WHAT OUR CLIENTS ARE SAYING",
+    description: "At CadenceSEO, we take the relationships with our clients very seriously, and what they have to say matters greatly.We are constantly striving to improve relationships with our clients. Listening to what they have to say is one way for us to know how we are doing and where we can improve. Take a look at what our clients have been saying when it comes to their experience working with the team at CadenceSEO!"
+
+}
+
+const reviews = Array(6).fill({
+
+    rating: "5.0",
+    review: "It is CadenceSEO's ability to build a personal relationship with us that I have found most impressive.",
+    designation: "COO, Cynergy Technology"
+
+})
+
+---
+<section class="py-16">
+    <Container>
+        <HeadingTwo>{ data.title }</HeadingTwo>
+        <section class="grid grid-cols-3 gap-8 pt-10">
+            <section class="py-20">
+                <p class="font-arial font-light leading-normal">{ data.description }</p>
+            </section>
+            <section class="col-span-2 bg-[#fafafa] p-6 space-y-6">
+                <div class="flex gap-6 items-center">
+                    <Link href="" aria_label="">
+                        <span class="text-[#17313b] text-2xl font-roboto hover:underline">CadenceSEO Reviews</span>
+                    </Link>
+                    <span class="text-[#17313b] text-xl font-roboto">4.9</span>
+                    <div class="flex gap-2 items-center">
+                        <FiveStars />
+                        <Link href="" aria_label="">
+                            <span class="text-xs uppercase tracking-wider text-cadence_red hover:underline">22 reviews</span>
+                        </Link>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-6">
+                    {
+
+                        reviews.map( ( value ) => {
+
+                            return(
+                                <ReviewCard
+                                    designation={ value.designation }
+                                    rating={ value.rating }
+                                    review={ value.review }
+                                />
+                            )
+
+                        })
+
+                    }
+                </div>
+                <div class="flex gap-2 items-center justify-center">
+                    <span class="text-xs font-roboto">Powered by</span>
+                    <div class="h-4 w-fit">
+                        <PictureInternalContain
+                            alternative_text=""
+                            source="/logo/clutch.svg"
+                        />
+                    </div>
+                </div>
+            </section>
+        </section>
+    </Container>
+</section>

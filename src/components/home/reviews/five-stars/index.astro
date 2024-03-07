@@ -1,0 +1,32 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// RED STAR ARRAY
+const star = Array(5).fill({
+
+    alternative_text: "red star icon",
+    source: "/icons/red-star.svg"
+
+})
+
+---
+<div class="flex items-center">
+    {
+
+        star.map( ( value ) => {
+
+            return(
+                <div class="size-6">
+                    <PictureInternalContain
+                        alternative_text={ value.alternative_text }
+                        source={ value.source }
+                    />
+                </div>
+            )
+
+        })
+
+    }
+</div>

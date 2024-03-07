@@ -1,0 +1,84 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonPurple from "@/atoms/button/purple/index.astro"
+import Link from "@/atoms/link/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// IMPORTS HEADER COLLECTION
+import { getCollection } from "astro:content"
+
+let header_data = await getCollection("header")
+header_data = header_data.sort((a, b) => a.data.order - b.data.order)
+
+---
+<header class="h-20 hidden md:flex items-center fixed top-10 z-50 w-full bg-white border-b border-zinc-200">
+    <Container>
+        <nav class="flex items-center justify-between h-full">
+            <Link href="/" aria_label="Cadenceseo logo">
+                <div class="h-16 w-full">
+                    <PictureInternalContain
+                        alternative_text="Cadenceseo logo"
+                        source="/logo/cs-logo.webp"
+                    />
+                </div>
+            </Link>
+            <div class="flex gap-8 items-center">
+                <ul class="flex gap-4">
+                    {
+
+                        header_data.map( ( item ) => {
+
+                            return (
+                                <li class="text-sm relative group cursor-pointer font-arial p-2 border-b-2 border-transparent hover:border-cadence_purple">
+                                    <Link
+                                        aria_label={"explore " + item.data.title }
+                                        href={ item.data.slug }
+                                    >
+                                        { item.data.title }
+                                    </Link>
+                                    {
+
+                                        item.data.has_dropdown &&
+                                        <div class="hidden group-hover:block group-hover:flex-col absolute bg-white -left-6 z-20 top-9 w-56 gap-2">
+                                            <div class="flex flex-col">
+                                            {
+
+                                                item.data.items.map( ( sub_item, sub_item_index ) => {
+
+                                                    return(
+                                                        <div class="py-3 px-10 hover:bg-cadence_purple group">
+                                                            <Link
+                                                                aria_label={ "explore" + sub_item.title }
+                                                                href={ "/" + sub_item.slug }
+                                                            >
+                                                                <span class="text-black hover:text-white">{ sub_item.title }</span>
+                                                            </Link>
+                                                        </div>
+                                                        <div class={`w-full bg-zinc-200 h-px ${ sub_item_index + 1 < item.data.items.length ? "block" : "hidden" }`}></div>
+                                                    )
+
+                                                })
+
+                                            }
+                                            </div>
+                                        </div>
+
+                                    }
+                                </li>
+                            )
+
+                        })
+
+                    }
+                </ul>
+            </div>
+            <Link href="/free-consultation" aria_label="Free Strategy Session">
+                <ButtonPurple>Free Strategy Session</ButtonPurple>
+            </Link>
+        </nav>
+    </Container>
+</header>
