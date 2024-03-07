@@ -1,0 +1,39 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import Form from "@/components/home/free-instant-evaluation/form/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingFour from "@/atoms/heading/four/black/center/index.astro"
+import ParagraphSmall from "@/atoms/paragraph/small/black/center/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    title: "Free Instant Evaluation of your Website",
+    description: "Enter the URL of your homepage, or any page on your site to get a report of how it performs in about 30 seconds.",
+    button_text: "See Results",
+    cover: "/delete-later/seo-background.jpg"
+
+}
+
+---
+<Container>
+    <section class="grid grid-cols-2 gap-4 py-16">
+        <div class="w-full h-full overflow-hidden">
+            <PictureInternal
+                alternative_text={ data.title }
+                source={ data.cover }
+            />
+        </div>
+        <div class="flex flex-col items-center gap-2 bg-cadence_light_gray border border-[#e3e3e3] p-10">
+            <HeadingFour>{ data.title }</HeadingFour>
+            <ParagraphSmall>{ data.description }</ParagraphSmall>
+            <Form />
+        </div>
+    </section>
+</Container>

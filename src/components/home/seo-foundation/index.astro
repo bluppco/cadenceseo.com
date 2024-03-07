@@ -1,0 +1,41 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonNeon from "@/atoms/button/neon/index.astro"
+import HeadingThreeCenterUppercase from "@/atoms/heading/three/black/center/uppercase/index.astro"
+import Link from "@/atoms/link/index.astro"
+import ParagraphXlCenter from "@/atoms/paragraph/xl/center/index.astro"
+
+const data = {
+
+    description: "One of the reasons CadenceSEO has been so successful is we believe in doing things the right way. Our philosophy is to work our tails off to deliver top-notch SEO services without cutting corners. Schedule a time today to speak with us and learn more about our philosophy."
+
+}
+
+const seo_foundation = {
+
+    title: "SEARCH ENGINE OPTIMIZATION IS THE FOUNDATION",
+    description: "Although a multi, if not omni-channel approach is the best way to be successful in today’s competitive digital landscape, our roots run deep when it comes to organic search. Search Engine Optimization (SEO) is the foundation for all other things digital when it comes to marketing. All other channels work better with a high-quality, technically-sound, and fully-optimized website. For that reason, we start with SEO first as a launch pad with every client. Want to know more? Click the button below and set up a time to talk with us!",
+    button_text: "Book a Free Strategy Session",
+    button_link: "free-consultation"
+
+}
+
+---
+<section class="bg-cadence_cream py-20">
+    <Container>
+        <section class="flex flex-col items-center gap-16 px-20">
+            <ParagraphXlCenter>{ data.description }</ParagraphXlCenter>
+            <div class="flex flex-col items-center gap-6">
+                <HeadingThreeCenterUppercase>{ seo_foundation.title }</HeadingThreeCenterUppercase>
+                <ParagraphXlCenter>{ seo_foundation.description }</ParagraphXlCenter>
+                <Link href={ "/" + seo_foundation.button_link } aria_label={ seo_foundation.button_text }>
+                    <ButtonNeon>{ seo_foundation.button_text }</ButtonNeon>
+                </Link>
+            </div>
+        </section>
+    </Container>
+</section>

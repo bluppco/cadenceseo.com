@@ -1,0 +1,38 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import Form from "@/components/home/newsletter/form/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingFiveWhiteCenter from "@/atoms/heading/five/white/center/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// HARDCODED DATA
+const data = {
+
+    title: "Subscribe to our newsletter",
+    description: "Stay up to date with the latest in the Digital Marketing and SEO Space!"
+
+}
+
+---
+<section class="bg-black py-20">
+    <Container>
+        <section class="flex flex-col gap-6 items-center">
+            <div class="size-14">
+                <PictureInternalContain
+                    alternative_text="email icon"
+                    source="/icons/email.svg"
+                />
+            </div>
+            <div class="flex flex-col gap-2 items-center">
+                <h2 class="text-white text-5xl text-center font-arial font-bold tracking-wider">{ data.title }</h2>
+                <HeadingFiveWhiteCenter>{ data.description }</HeadingFiveWhiteCenter>
+                <Form />
+            </div>
+        </section>
+    </Container>
+</section>

@@ -1,0 +1,47 @@
+---
+
+// IMPORTS ASTRO COMPONENTS
+import DigitalMarketingTeam from "@/components/home/seo-expertise/digital-marketing-team/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingThreeWhiteCenterUppercase from "@/atoms/heading/three/white/center/uppercase/index.astro"
+import ParagraphLargeWhiteCenter from "@/atoms/paragraph/large/white/center/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+const seo_expertise = {
+
+    title: "SEO Expertise",
+    description: "In an industry full of tools that promise results and “done-for-you” solutions, we believe in bringing the human element to digital marketing. Our team of experienced experts bring all the tools and knowledge to put together a digital strategy that will deliver results you could only imagine. Sure, tools are wonderful – but if you’re unsure what to do with the data you get back, you can waste time spinning your wheels and going nowhere. Let our team of experts help do what a tool alone can’t!",
+    cover: "/delete-later/seo-expertise.jpg"
+
+}
+
+const dm_team = {
+
+    title: "Learn about your digital marketing team",
+    description: "Our team of Digital Marketing badasses come with one heck of a story. One that can be considered a mixture of formalized learning paired with some education done at the school of hard knocks. Our story is full of peaks and valleys that have allowed us to do amazing things on our journey to this point. Learn about our origin as well as a little bit about our awesome team members (and some exceptionally cool pictures!)",
+    button_text: "Book a Free Strategy Session",
+    button_link: "free-consultation"
+
+}
+
+---
+<section class="bg-transparent bg-gradient-to-r from-[#3D8EF7] to-[#9303F1] bg-center" style="background-color: transparent; background-image: radial-gradient(at center center, #3D8EF7 0%, #9303F1 100%);">
+    <section class="grid grid-cols-5">
+        <section class="col-span-2 w-full aspect-square flex items-center h-full p-4">
+            <PictureInternal
+                alternative_text={ seo_expertise.title }
+                source={ seo_expertise.cover }
+            />
+        </section>
+        <section class="col-span-3 space-y-16 py-16 px-10">
+            <section class="space-y-4">
+                <HeadingThreeWhiteCenterUppercase>{ seo_expertise.title }</HeadingThreeWhiteCenterUppercase>
+                <ParagraphLargeWhiteCenter>{ seo_expertise.description }</ParagraphLargeWhiteCenter>
+            </section>
+            <DigitalMarketingTeam
+                data={ dm_team }
+            />
+        </section>
+    </section>
+</section>
