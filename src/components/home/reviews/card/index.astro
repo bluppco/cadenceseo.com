@@ -1,0 +1,35 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import FiveStars from "@/components/home/reviews/five-stars/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    designation,
+    rating,
+    review
+
+} = Astro.props
+
+---
+<div class="flex flex-col gap-3 justify-between bg-white p-4 shadow-lg hover:shadow-xl">
+    <div class="flex gap-4 items-center">
+        <span class="text-[#17313b] text-xl font-roboto">{ rating }</span>
+        <FiveStars />
+    </div>
+    <p class="text-#17313b text-sm leading-snug">{ review }</p>
+    <div class="flex flex-col gap-3">
+        <span class="text-[#6a7a7e] text-xs font-roboto">{ designation }</span>
+        <div class="flex items-center gap-1">
+            <div class="size-4">
+                <PictureInternalContain
+                    alternative_text=""
+                    source="/icons/tick.svg"
+                />
+            </div>
+            <span class="text-[#6a797d] text-xs font-roboto">Verified Review</span>
+        </div>
+    </div>
+</div>
