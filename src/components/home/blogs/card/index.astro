@@ -1,0 +1,48 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import HeadingThreePurple from "@/atoms/heading/three/purple/index.astro"
+import Link from "@/atoms/link/index.astro"
+import ParagraphSmallGray from "@/atoms/paragraph/small/gray/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    author_source,
+    button_text,
+    category,
+    description,
+    link,
+    source,
+    title
+
+} = Astro.props
+
+---
+<div class="bg-white rounded relative h-full overflow-hidden">
+    <div class="relative">
+        <div class="w-full aspect-[3/2] bg-zinc-200">
+            <PictureInternal
+                alternative_text={ title }
+                source={ source }
+            />
+        </div>
+        <div class="size-16 bg-zinc-200 rounded-full overflow-hidden absolute -bottom-8 left-8">
+            <PictureInternal
+                alternative_text={ title }
+                source={ author_source }
+            />
+        </div>
+    </div>
+    <div class="px-8 py-12 space-y-6">
+        <Link href={ "/blogs/" + link } aria_label={ button_text }>
+            <HeadingThreePurple>{ title }</HeadingThreePurple>
+        </Link>
+        <ParagraphSmallGray>{ description }</ParagraphSmallGray>
+        <Link href={ "/blogs/" + link } aria_label={ button_text }>
+            <span class="uppercase font-arial font-medium text-cadence_purple text-xs">{ button_text }</span>
+        </Link>
+    </div>
+    <span class="bg-cadence_dark_gray px-4 py-1.5 rounded-full uppercase text-white font-arial font-light text-xs absolute top-5 right-5">{ category }</span>
+</div>

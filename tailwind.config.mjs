@@ -49,7 +49,10 @@ module.exports = {
 
 				"cadence_red": "#fc0508",
 				"cadence_light_lavender": "#D8D0E4",
-				"cadence_cyan": "#05D3CB"
+				"cadence_cyan": "#05D3CB",
+				"cadence_purple": "#7038EF",
+				"cadence_gray": "#777",
+				"cadence_dark_gray": "#69727d"
 
 
 			},
