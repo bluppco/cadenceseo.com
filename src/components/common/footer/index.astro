@@ -3,9 +3,42 @@
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORTS ASTRO COMPONENTS
+import SocialIcons from "@/components/common/footer/social-icons/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+
 ---
-<footer class="bg-pink-600 py-20">
+<footer class="bg-[#002058] bg-no-repeat bg-cover" style=`background-image: url(${ "/images/footer-background-image.jpg" })`>
     <Container>
-        <p class="text-white">I am footer</p>
+       <section class="md:flex justify-between py-16">
+            <section class="space-y-4">
+                <div class="h-32 w-full">
+                    <PictureInternalContain
+                        alternative_text="cadenceseo light logo"
+                        source="/logo/white-logo.webp"
+                    />
+                </div>
+                <div class="flex flex-col gap-6 items-center">
+                    <span class="text-[#FAFAFA] text-3xl font-arial font-bold">The Opportunities Are Endless.</span>
+                    <span class="text-[#ff0000] font-arial text-xl">SEO Consulting by State</span>
+                </div>
+            </section>
+            <section class="flex flex-col gap-6 items-center">
+                <span class="text-white font-arial uppercase text-xl">Contact Us</span>
+                <div class="flex flex-col gap-2 items-center">
+                    <span class="text-white font-arial font-medium">1430 S Boulder Street Unit A, Gilbert , AZ 85296</span>
+                    <span class="text-white font-arial font-medium">Phone: <a href="tel:8882102602"><span class="text-white font-arial font-light">888-210-2602</span></a></span>
+                    <span class="text-white font-arial font-medium">Email: <a href="mailto:info@cadenceseo.com"><span class="text-white font-arial font-light">Info@cadenceseo.com</span></a></span>
+                </div>
+                <span class="text-white font-arial font-medium">Try our free <span class="text-[#ff0000] font-arial font-medium">SEO Tools</span> Today!</span>
+                <SocialIcons />
+            </section>
+       </section>
     </Container>
+    <section class="bg-white py-3">
+        <p class="text-xs text-center tracking-wider font-arial">&copy; { new Date().getFullYear() } CadenceSeo All rights reserved.</p>
+    </section>
 </footer>
