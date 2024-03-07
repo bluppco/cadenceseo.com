@@ -47,10 +47,13 @@ module.exports = {
 			},
 			colors: {
 
+				"cadence_red": "#fc0508",
+
 
 			},
 			fontFamily: {
 
+				"roboto": [ "Roboto", "sans-serif" ]
 
 			}
 

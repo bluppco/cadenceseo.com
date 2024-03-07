@@ -1,0 +1,25 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import ButtonRed from "@/atoms/button/red/index.astro"
+import HeadingOneWhite from "@/atoms/heading/one/white/center/index.astro"
+import Link from "@/atoms/link/index.astro"
+import Paragraph2xlWhiteCenter from "@/atoms/paragraph/two-xl/white/center/index.astro"
+
+const data = {
+
+    title: "Experience the CadenceSEO Difference",
+    description: "Honest Straight Forward SEO and Digital Marketing Consulting with No Secrets!",
+    button_text: "Learn More Today",
+    button_link: "about-us"
+
+}
+
+---
+<section class="flex flex-col items-center gap-12 py-32" style="background-color: transparent; background-image: radial-gradient(at center center, #16CBD8 18%, #6400E0 67%);">
+    <HeadingOneWhite>{ data.title }</HeadingOneWhite>
+    <Paragraph2xlWhiteCenter>{ data.description }</Paragraph2xlWhiteCenter>
+    <Link href={ data.button_link } aria_label={ data.button_text }>
+        <ButtonRed>{ data.button_text }</ButtonRed>
+    </Link>
+</section>
