@@ -1,0 +1,21 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import ButtonNeon from "@/atoms/button/neon/index.astro"
+import HeadingThreeWhiteCenterUppercase from "@/atoms/heading/three/white/center/uppercase/index.astro"
+import Link from "@/atoms/link/index.astro"
+import ParagraphLargeWhiteCenter from "@/atoms/paragraph/large/white/center/index.astro"
+
+// GET ASTRO PROPS
+const { data } = Astro.props
+
+---
+<section class="flex flex-col items-center gap-4">
+    <HeadingThreeWhiteCenterUppercase>{ data.title }</HeadingThreeWhiteCenterUppercase>
+    <ParagraphLargeWhiteCenter>{ data.description }</ParagraphLargeWhiteCenter>
+    <div class="pt-2">
+        <Link href={ data.button_link } aria_label={ data.button_text }>
+            <ButtonNeon>{ data.button_text }</ButtonNeon>
+        </Link>
+    </div>
+</section>
