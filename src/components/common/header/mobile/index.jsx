@@ -22,7 +22,7 @@ const HeaderMobile = ( props ) => {
                     <Link href="/" aria_label="cadenceseo logo">
                         <div className="h-10 w-full">
                             <PictureInternalContain
-                                alternative_text="close icon"
+                                alternative_text="cadenceseo logo"
                                 source="/logo/cs-logo.webp"
                             />
                         </div>
