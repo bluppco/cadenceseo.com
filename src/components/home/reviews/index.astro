@@ -28,27 +28,29 @@ const reviews = Array(6).fill({
 })
 
 ---
-<section class="py-16">
+<section class="py-4 md:py-16">
     <Container>
         <HeadingTwo>{ data.title }</HeadingTwo>
-        <section class="grid grid-cols-3 gap-8 pt-10">
-            <section class="py-20">
+        <section class="grid md:grid-cols-3 gap-4 md:gap-8 pt-4 md:pt-10">
+            <section class="md:py-20">
                 <p class="font-arial font-light leading-normal">{ data.description }</p>
             </section>
-            <section class="col-span-2 bg-[#fafafa] p-6 space-y-6">
-                <div class="flex gap-6 items-center">
+            <section class="md:col-span-2 bg-[#fafafa] p-4 md:p-6 space-y-4 md:space-y-6">
+                <div class="flex flex-col md:flex-row gap-4 md:gap-6 md:items-center">
                     <Link href="" aria_label="">
-                        <span class="text-[#17313b] text-2xl font-roboto hover:underline">CadenceSEO Reviews</span>
+                        <span class="text-[#17313b] text-lg md:text-2xl font-roboto hover:underline">CadenceSEO Reviews</span>
                     </Link>
-                    <span class="text-[#17313b] text-xl font-roboto">4.9</span>
-                    <div class="flex gap-2 items-center">
-                        <FiveStars />
-                        <Link href="" aria_label="">
-                            <span class="text-xs uppercase tracking-wider text-cadence_red hover:underline">22 reviews</span>
-                        </Link>
+                    <div class="flex gap-2 md:gap-6 items-center">
+                        <span class="text-[#17313b] text-lg md:text-xl font-roboto">4.9</span>
+                        <div class="flex gap-2 items-center">
+                            <FiveStars />
+                            <Link href="" aria_label="">
+                                <span class="text-xs uppercase tracking-wider text-cadence_red hover:underline">22 reviews</span>
+                            </Link>
+                        </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-6">
+                <div class="grid md:grid-cols-2 gap-6">
                     {
 
                         reviews.map( ( value ) => {
