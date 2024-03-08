@@ -18,7 +18,7 @@ const Form = ( props ) => {
                 className="w-full h-8 md:h-11 text-xs md:text-base border border-[#e3e3e3] p-3 rounded placeholder:text-zinc-400 placeholder:font-light"
                 placeholder="Email"
             />
-            <button className="mt-2 h-8 md:h-11 text-xs md:text-base bg-cadence_purple text-white tracking-wide font-roboto font-light px-14 rounded w-fit">See Results</button>
+            <button className="mt-2 h-10 md:h-11 text-xs md:text-base bg-cadence_purple text-white tracking-wide font-roboto font-light px-14 rounded w-fit">See Results</button>
         </div>
     )
 
