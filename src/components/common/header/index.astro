@@ -3,6 +3,9 @@
 // IMPORTS ASTRO LAYOUTS
 import Container from "@/layouts/container/index.astro"
 
+// IMPORTS ASTRO COMPONENTS
+import HeaderMobile from "@/components/common/header/mobile/index.jsx"
+
 // IMPORTS ASTRO ATOMS
 import ButtonPurple from "@/atoms/button/purple/index.astro"
 import Link from "@/atoms/link/index.astro"
@@ -82,3 +85,7 @@ header_data = header_data.sort((a, b) => a.data.order - b.data.order)
         </nav>
     </Container>
 </header>
+<HeaderMobile
+    client:load
+    header_data={ header_data }
+/>
